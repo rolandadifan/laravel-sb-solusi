@@ -3,3 +3,23 @@
     background-position: center !important;
     background-size: cover !important;
 }
+
+.delete-image{
+    position: absolute;
+    z-index: 100;
+    left: 150;
+    top: 0;
+    background-color: red;
+    border-radius: 50%;
+    padding: 2px 8px 2px 8px;
+}
+
+.delete-image:hover{
+    transform: translateY(-10px);
+}
+
+.button-delete-gallery{
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: white;
+}

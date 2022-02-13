@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Project;
+use App\Models\News;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $project = Project::all()->count();
+        $news = News::all()->count();
+        $min=1;
+        $max=100;
+        $task = rand($min,$max);
+        return view('home', [
+            'project' => $project,
+            'news' => $news,
+            'task' => $task,
+        ]);
     }
 }

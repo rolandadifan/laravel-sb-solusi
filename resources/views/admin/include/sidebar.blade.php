@@ -30,7 +30,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="tables.html">
+                <a class="nav-link" href="{{ route('project.index') }}">
                     <i class="nav-icon fas fa-building"></i>
                     <span>Projects</span></a>
             </li>

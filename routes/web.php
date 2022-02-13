@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,16 @@ Route::prefix('web/admin')->middleware(['auth'])->group(function(){
     Route::get('/about', [MenuController::class, 'about_index'])->name('about.index');
     Route::put('/about', [MenuController::class, 'about_update'])->name('about.update');
     Route::put('/about/image-update', [MenuController::class, 'img_update'])->name('img.update');
+
+    //projects
+    Route::get('/project', [ProjectController::class, 'index'])->name('project.index');
+    Route::get('/project/{id}', [ProjectController::class, 'show'])->name('project.edit');
+    Route::get('/project-create', [ProjectController::class, 'create'])->name('project.create');
+    Route::post('/project', [ProjectController::class, 'store'])->name('project.store');
+    Route::put('/project/{id}', [ProjectController::class, 'update'])->name('project.update');
+    Route::delete('/project/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
+    Route::post('/project/gallery/create', [ProjectController::class, 'add_image'])->name('project.gallery.create');
+    Route::delete('/project/gallery/{id}', [ProjectController::class, 'destroy_gallery'])->name('project.gallery.destroy');
 
 
 
