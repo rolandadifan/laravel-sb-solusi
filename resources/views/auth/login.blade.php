@@ -29,6 +29,12 @@
                                         <div class="form-group">
                                             <input type="password" 
                                                 id="exampleInputPassword" class="form-control @error('password') is-invalid @enderror form-control-user" name="password" placeholder="Password">
+                                                
+                                                 @error('password')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                @enderror
                                         </div>
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
