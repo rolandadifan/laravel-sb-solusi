@@ -27,11 +27,11 @@ class MailController extends Controller
             ];
     
             Mail::to('zirex28@gmail.com')->send(new \App\Mail\Contact($details));
-            Alert::toast('Succes Send Message', 'Success Send Message');
+            Alert::toast('Success Send Message','success');
             return redirect()->back();
         } catch (\Throwable $th) {
             //throw $th;
-            Alert::toast('Opps Something wrong', 'Opps Something wrong');
+            Alert::toast('Opps Something wrong', 'error');
             return redirect()->back();
         }
 
