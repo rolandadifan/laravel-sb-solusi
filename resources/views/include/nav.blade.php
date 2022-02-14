@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{{ (!request()->is('/') ? url('/#service') : '#service') }}">Service</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ (request()->is('project') ? 'active' : '') }}" href="#project">Project</a>
+                    <a class="nav-link {{ (request()->is('project') ? 'active' : '') }}" href="{{ (!request()->is('/') ? url('/#project') : '#project') }}">Project</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ (!request()->is('/') ? url('/#about') : '#about') }}">About</a>
