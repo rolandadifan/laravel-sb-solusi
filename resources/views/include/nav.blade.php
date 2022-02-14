@@ -12,19 +12,19 @@
                     <a class="nav-link {{ !(request()->is('/') ? '' : 'active') }}" href="{{ (!request()->is('/') ? url('/') : '#home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/') : '#service') }}">Service</a>
+                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/#service') : '#service') }}">Service</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ (request()->is('project') ? 'active' : '') }}" href="#project">Project</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/') : '#about') }}">About</a>
+                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/#about') : '#about') }}">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/') : '#news') }}">News</a>
+                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/#news') : '#news') }}">News</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/') : '#contact') }}">Contact</a>
+                    <a class="nav-link" href="{{ (!request()->is('/') ? url('/#contact') : '#contact') }}">Contact</a>
                 </li>
             </ul>
             </div>
