@@ -6,6 +6,11 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\MailController;
+use App\Http\Controllers\NewsClientController;
+use App\Http\Controllers\ProjectClientController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,12 +23,23 @@ use App\Http\Controllers\Admin\ProjectController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomePageController::class, 'index']);
 
 Auth::routes(['register' => false]);
 
+
+//project
+Route::get('/project', [ProjectClientController::class, 'index'])->name('project.client');
+Route::get('/project/{slug}', [ProjectClientController::class, 'show'])->name('project.client.detail');
+Route::get('/project/search/category', [ProjectClientController::class, 'category'])->name('project.seacrh.category');
+Route::get('/search', [SearchController::class, 'project']);
+
+//news
+Route::get('/news', [NewsClientController::class, 'index'])->name('news.client');
+Route::get('/news/{slug}', [NewsClientController::class, 'show'])->name('news.client.detail');
+
+//sendmail
+Route::post('/send-mail', [MailController::class, 'send_mail']);
 
 Route::prefix('web/admin')->middleware(['auth'])->group(function(){
     Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
