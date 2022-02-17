@@ -26,7 +26,7 @@ class MailController extends Controller
                 'email' => $email,
             ];
     
-            Mail::to('zirex28@gmail.com')->send(new \App\Mail\Contact($details));
+            Mail::to('sbs.office@sbsolusi.com')->send(new \App\Mail\Contact($details));
             Alert::toast('Success Send Message','success');
             return redirect()->back();
         } catch (\Throwable $th) {

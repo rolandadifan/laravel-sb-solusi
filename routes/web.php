@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\MenuController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\NewsClientController;
@@ -84,7 +85,10 @@ Route::prefix('web/admin')->middleware(['auth'])->group(function(){
     Route::post('/project/gallery/create', [ProjectController::class, 'add_image'])->name('project.gallery.create');
     Route::delete('/project/gallery/{id}', [ProjectController::class, 'destroy_gallery'])->name('project.gallery.destroy');
 
-
+    //service
+    Route::get('/service',[ServiceController::class, 'index'])->name('service.index');
+    Route::get('/service/{id}',[ServiceController::class, 'edit'])->name('service.edit');
+    Route::put('/service/{id}',[ServiceController::class, 'update'])->name('service.update');
 
 });
 

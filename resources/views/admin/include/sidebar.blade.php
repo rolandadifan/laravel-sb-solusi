@@ -55,6 +55,7 @@
                         <a class="collapse-item" href="{{ route('about.index') }}">About</a>
                         <a class="collapse-item" href="{{ route('header.index') }}">Header</a>
                         <a class="collapse-item" href="{{ route('social.index') }}">Social Media</a>
+                        <a class="collapse-item" href="{{ route('service.index') }}">Service</a>
                     </div>
                 </div>
             </li>
